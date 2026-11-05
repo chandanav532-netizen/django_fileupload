@@ -1,0 +1,13 @@
+<h1>Uploaded Documents</h1>
+<ul> 
+    {% for doc in documents %}    
+    <li>       
+         <strong>{{ doc.title }}</strong>         
+         ({{ doc.uploaded_at }})       
+          — <a href="{{ doc.file.url }}" target="_blank">Download / View</a>    
+    </li> 
+    {% empty %}
+        <li>No files uploaded yet.</li> 
+    {% endfor %} 
+</ul>
+ <p><a href="{% url 'upload' %}">Upload new file</a></p>
